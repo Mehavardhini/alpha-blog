@@ -1,0 +1,5 @@
+placing images in the app/assets/images doesn't work.
+
+Instead place the files in public/img. and refer to it using <%= image_tag("/img/origami.jpg", :alt => "origami") %>.
+
+The / in the beginning is imp.. It refers to the root of public directory.
