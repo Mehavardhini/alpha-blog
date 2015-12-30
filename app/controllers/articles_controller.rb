@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
+
   def new
     @article = Article.new
   end
@@ -42,8 +44,12 @@ class ArticlesController < ApplicationController
     flash[:notice] = "Article was deleted successfully"
     redirect_to articles_path
   end
-  
+
   private
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
   def article_params
     params.require(:article).permit(:title,:description)
   end
