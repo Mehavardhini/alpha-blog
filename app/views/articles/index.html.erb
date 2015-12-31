@@ -5,9 +5,15 @@
 <%= article.title %>  </h3>
 <%= article.created_at %>
 <hr>
-     <p><%= article.description %></p>
+    <% if article.description.length > 150  %>
+     <p><%= truncate(article.description, length: 150) %></p>
+
+     <% else %>
+     <p><%= article.description %> <p>
+    <% end %>
      <hr>
+     <%= link_to "View this article", article_path(article), class: "btn btn-success" %>
       <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-primary" %>
       <%= link_to 'Delete this article', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
 </div>
-  <% end %>
+<% end %>
