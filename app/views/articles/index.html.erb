@@ -1,7 +1,10 @@
 <h1 align="center">Listing All Articles</h1>
     <% @articles.each do |article| %>
  <div class="well col-md-10 col-md-offset-1 list_articles">
-<h3 class="font-custom-color bold">     <%= article.title %>  </h3><hr>
+<h3 class="font-custom-color bold">
+<%= article.title %>  </h3>
+<%= article.created_at %>
+<hr>
      <p><%= article.description %></p>
      <hr>
       <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-primary" %>
