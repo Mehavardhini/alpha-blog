@@ -39,6 +39,13 @@ h1{
   background-color: #59407F;
 }
 
+.font-custom-color{
+  color: #59407F;
+}
+
+.bold{
+  font-weight: bold;
+}
 .btn-xlarge {
 font-size: 1.7em;
 background-color: black;
@@ -51,6 +58,19 @@ background-color: black;
 .margin-top-20px{
   margin-top: 20px;
 }
+
+.list_articles{
+  padding-top: 0px;
+}
+
+.list_articles hr{
+    margin:5px;
+}
+
+.list_articles p{
+  margin: 15px;
+}
+
 footer {
 margin-top: 45px;
 padding-top: 5px;

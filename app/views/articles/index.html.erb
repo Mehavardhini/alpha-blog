@@ -1,19 +1,10 @@
-<h1>All Articles</h1>
-<p><%= link_to "Create new Articles", new_article_path %></p>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-
-
+<h1 align="center">Listing All Articles</h1>
     <% @articles.each do |article| %>
-    <tr>
-      <td> <%= article.title %> </td>
-      <td> <%= article.description %> </td>
-      <td><%= link_to "Show", article_path(article) %></td>
-      <td><%= link_to "Edit", edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
-    </tr>
+ <div class="well col-md-10 col-md-offset-1 list_articles">
+<h3 class="font-custom-color bold">     <%= article.title %>  </h3><hr>
+     <p><%= article.description %></p>
+     <hr>
+      <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-primary" %>
+      <%= link_to 'Delete this article', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
+</div>
   <% end %>
-</table>
