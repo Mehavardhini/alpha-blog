@@ -3,7 +3,6 @@
  <div class="well col-md-10 col-md-offset-1 list_articles">
 <h3 class="font-custom-color bold">
 <%= article.title %>  </h3>
-<%= article.created_at %>
 <hr>
     <% if article.description.length > 150  %>
      <p><%= truncate(article.description, length: 150) %></p>
@@ -11,6 +10,12 @@
      <% else %>
      <p><%= article.description %> <p>
     <% end %>
+    <hr>
+    <div class="article-meta">
+       <%= "Created by: " + article.user.username if article.user %>
+      <%=  time_ago_in_words(article.created_at)  %> ago,
+      Updated at: <%= time_ago_in_words(article.updated_at) %> ago
+    </div>
      <hr>
      <%= link_to "View this article", article_path(article), class: "btn btn-success" %>
       <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-primary" %>
