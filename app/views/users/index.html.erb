@@ -1,0 +1,10 @@
+<h1 align="center">All Alpha Bloggers</h1>
+<ul align="center" class="no-list-style padding">
+  <% @users.each do |user| %>
+    <div class="col-md-8 col-md-offset-2 well margin-top-20px">
+      <li><%= gravitor_for(user) %></li>
+      <li><h4><%= link_to user.username,user_path(user)%></h4></li>
+      <li><%= pluralize(user.articles.count,"article") %></li>
+    </div>
+  <% end %>
+</ul>
